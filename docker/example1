@@ -1,0 +1,28 @@
+FROM jenkins/jenkins:2.122
+LABEL description="Docker base image for Microchip project, with CI"
+USER root
+RUN apt-get update && apt-get install -y \
+     ruby \
+     gcc-multilib \
+     git \
+     build-essential \
+     bzip2 \
+     cpio \
+     curl \
+     python \
+     unzip \
+     wget \
+
+RUN curl -fSL -A "Mozilla/4.0" -o /tmp/xc16.run "http://www.microchip.com/mplabxc16linux" \
+    && chmod a+x /tmp/xc16.run \
+    && /tmp/xc16.run --mode unattended --unattendedmodeui none \
+       --netservername localhost --LicenseType FreeMode --prefix /opt/microchip/xc16 \
+    && rm /tmp/xc16.run
+
+RUN apt-get install -y nano vim
+
+
+USER jenkins
+
+ENV PATH $PATH:/opt/microchip/xc16/bin
+
