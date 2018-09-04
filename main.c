@@ -16,15 +16,28 @@ int main(int argc, char** argv) {
     // initialize the device
     //SYSTEM_Initialize();
     
-    while (1)
+    for (int i = 0; i<5 ; i++)
     {
         // Add your application code
-        printf("Rob is great \n");
+        printf("Docker is great \n");
         
     }
 
-    printf("Rob is great\n");
-    
+    printf("                    ##        .            ");
+    printf("              ## ## ##       ==            ");
+    printf("           ## ## ## ##      ===            ");
+    printf("       /""""""""""""""""\\\___/ ===        ");
+    printf("  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   ");
+    printf("       \\\______ o          __/            ");
+    printf("         \\\    \\\        __/             ");
+    printf("          \\\____\\\______/                ");
+    printf("                                           ");
+    printf("          |          |                     ");
+    printf("       __ |  __   __ | _  __   _           ");
+    printf("      /  \\\| /  \\\ /   |/  / _\\\ |      ");
+    printf("      \\\__/| \\\__/ \\\__ |\\\_ \\\__  |  ");
+    printf("                                           "); 
+
     return (EXIT_SUCCESS);
 }
 
